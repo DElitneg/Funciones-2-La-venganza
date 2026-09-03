@@ -272,7 +272,7 @@ namespace ConsoleApplication1
     }
 }
 
-//7)
+//7) Incompleto
 
 using System;
 using System.Collections.Generic;
