@@ -110,3 +110,57 @@ namespace ConsoleApplication1
 }
 
 //3)
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication1
+{
+    class Program
+    {
+
+        static void Numerador()
+        {
+            //LA SUMA DE LOS DIVISORES == AL NUMERO (positivos, excluyendo al mismo numero, ej 1 no es Perfecto)
+
+            int numeroInicio = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Ingrese el segundo numero para establecer el final");
+            int numeroFinal = int.Parse(Console.ReadLine());
+
+
+            int suma = 0, pares = 0, impares = 0;
+
+            for (int i = numeroInicio; i <= numeroFinal; i++)
+            {
+                Console.WriteLine(i);
+                suma += i;
+
+                if (i % 2 == 0)
+                {
+                    pares += 1;
+                }
+                else if (i % 2 != 0)
+                {
+                    impares += 1;
+                }           
+            }
+            Console.WriteLine("La suma total de todos los numeros fue de "+suma);
+            Console.WriteLine("Hubo "+pares+" Numeros Pares");
+            Console.WriteLine("Y hubo "+impares+" Numeros Impares");
+
+        }
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Ingrese el primer numero para establecer el inicio");
+            Numerador();
+        }
+        //
+    }
+}
+
+//4) 
+
