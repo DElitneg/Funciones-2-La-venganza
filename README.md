@@ -271,3 +271,44 @@ namespace ConsoleApplication1
         //
     }
 }
+
+//7)
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication1
+{
+    class Program
+    {
+
+        static void NumeradorPrimo()
+        {
+            //la descomposicion de factores primos es como la potencia pero divisoria
+
+            int factorPrimo = 0;
+            int numero = int.Parse(Console.ReadLine());
+
+
+            for (int i = 2; factorPrimo != 1; i++)
+            {
+                while (numero % i == 0) 
+                {
+                    factorPrimo = numero / i;
+                }
+            }
+            Console.WriteLine(factorPrimo);
+
+         }
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Ingrese un numero entero para descomponerlo en factores primos");
+            NumeradorPrimo();
+
+        }
+        //
+    }
+}
