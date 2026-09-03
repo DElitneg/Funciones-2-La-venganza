@@ -164,3 +164,51 @@ namespace ConsoleApplication1
 
 //4) 
 
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication1
+{
+    class Program
+    {
+
+        static void Numerador()
+        {
+            //negativos,positivos,ceros y el promedio de los positivos y de los negativos
+            int positivos = 0, negativos = 0, ceros = 0, promedioNegativo = 0, promedioPositivo = 0;       
+
+            for (int i = 0; i < 10; i++)
+            {
+                int numero = int.Parse(Console.ReadLine());
+
+                if (numero > 0)
+                {
+                    positivos += 1;
+                    promedioPositivo += numero;
+                }
+                if (numero < 0)
+                {
+                    negativos += 1;
+                    promedioNegativo += numero;
+                }
+                if (numero == 0)
+                {
+                    ceros += 1;
+                }
+            }
+            promedioNegativo /= negativos;
+            promedioPositivo /= positivos;
+            Console.WriteLine("El promedio de los valores Positivos fue de " + promedioPositivo + ". Y el de los Negativos fue de " + promedioNegativo);
+            Console.WriteLine("Hubo " + positivos + " Numeros Positivos, hubo " + negativos + " Numeros Negativos, y hubo "+ceros+" ceros");
+        }
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Ingrese 5 numeros enteros para ser analizados");
+            Numerador();
+        }
+        //
+    }
+}
