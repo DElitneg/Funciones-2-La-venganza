@@ -212,3 +212,62 @@ namespace ConsoleApplication1
         //
     }
 }
+
+//5)
+
+
+
+
+
+
+
+
+
+//6)
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication1
+{
+    class Program
+    {
+
+        static void Numerador()
+        {
+            //mayor y segundo mayor xdd
+            int mayor, segundoMayor;
+
+            int numero = Convert.ToInt32(Console.ReadLine());
+            mayor = numero; segundoMayor = numero;
+
+            for (int i = 0; i < 4; i++)
+            {
+
+                numero = int.Parse(Console.ReadLine());
+
+                if (numero > mayor)
+                {
+                    segundoMayor = mayor;
+                    mayor = numero;
+                }
+                else if (numero >segundoMayor)
+                {
+                    segundoMayor = numero;
+                }
+            }
+            Console.WriteLine("El mayor numero ingresado fue " + mayor);
+            Console.WriteLine("El segundo mayor numero ingresado fue " + segundoMayor);
+        }
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Ingrese 5 numeros enteros para ser analizados");
+            Numerador();
+
+        }
+        //
+    }
+}
