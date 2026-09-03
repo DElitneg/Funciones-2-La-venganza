@@ -65,3 +65,48 @@ namespace ConsoleApplication1
 
 //2)
 
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication1
+{
+    class Program
+    {
+
+        static void PerfectCell()
+        {
+            //LA SUMA DE LOS DIVISORES == AL NUMERO (positivos, excluyendo al mismo numero, ej 1 no es Perfecto)
+
+            int numero = int.Parse(Console.ReadLine());
+            int suma = 0;
+
+            for (int i = 1; i < numero; i++)
+            {
+                if(numero%i == 0)
+                {
+                    suma += i;
+                }  
+            }
+            if(suma == numero)
+            {
+                Console.WriteLine("El Numero es PERFECTO");
+            }
+            else
+            {
+                Console.WriteLine("El numero NO es Perfecto");
+            }        
+
+        }
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Ingrese un numero positivo para calcular si es perfecto (sonidos de Cell de fondo)");
+            PerfectCell();
+        }
+        //
+    }
+}
+
+//3)
