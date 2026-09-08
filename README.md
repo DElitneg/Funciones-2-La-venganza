@@ -272,7 +272,7 @@ namespace ConsoleApplication1
     }
 }
 
-//7) Incompleto
+//7) 
 
 using System;
 using System.Collections.Generic;
@@ -289,25 +289,29 @@ namespace ConsoleApplication1
         {
             //la descomposicion de factores primos es como la potencia pero divisoria
 
-            int factorPrimo = 0;
+            int factorPrimo = 0, contador = 0;
             int numero = int.Parse(Console.ReadLine());
 
 
             for (int i = 2; factorPrimo != 1; i++)
             {
-                while (numero % i == 0) 
+                while (numero % i == 0)
                 {
-                    factorPrimo = numero / i;
-                }
-            }
-            Console.WriteLine(factorPrimo);
+                    numero = numero / i;
+                    factorPrimo = numero;
 
-         }
+                    Console.WriteLine(factorPrimo);
+                    contador++;
+                }                              
+            }
+            Console.WriteLine("El numero tiene " + contador + " factores primos");
+
+        }
         static void Main(string[] args)
         {
             Console.WriteLine("Ingrese un numero entero para descomponerlo en factores primos");
             NumeradorPrimo();
-
+            
         }
         //
     }
