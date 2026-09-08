@@ -287,7 +287,7 @@ namespace ConsoleApplication1
 
         static void NumeradorPrimo()
         {
-            //la descomposicion de factores primos es como la potencia pero divisoria
+            
 
             int factorPrimo = 0, contador = 0;
             int numero = int.Parse(Console.ReadLine());
