@@ -321,52 +321,54 @@ namespace ConsoleApplication1
 
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ConsoleApplication1
 {
     class Program
     {
-
         static void NumeradorPrimo()
         {
-            //la descomposicion de factores primos es como la potencia pero divisoria
+            int contadorPrimos = 0;
+            
+            // Usamos int en lugar de Double
+            int inicio = Convert.ToInt32(Console.ReadLine());
+            int final = Convert.ToInt32(Console.ReadLine());
 
-            Double contador = 0;
-            Double inicio = Convert.ToDouble(Console.ReadLine());
-            Double final = Convert.ToDouble(Console.ReadLine());
-
-            for (Double numero = (inicio+1); numero < final; numero++)
+            // Recorremos los números en el rango (excluyendo inicio y final)
+            for (int numero = (inicio + 1); numero < final; numero++)
             {
-                //Console.WriteLine(numero + " numero");
+                // El 1 y los números menores no son primos
+                if (numero <= 1) continue; 
 
-                for (Double i = 2; i < numero; i++)
+                bool esPrimo = true;
+
+                // Buscamos si tiene algún divisor exacto
+                // Optimizamos: solo evaluamos hasta la raíz cuadrada del número
+                for (int i = 2; i * i <= numero; i++)
                 {
-                    //Console.WriteLine(i + " divisor");
-
-                    if (numero % i < i)
+                    if (numero % i == 0)
                     {
-
-                        Console.WriteLine(numero / i);
-                        contador++;
-
+                        esPrimo = false; 
+                        break;       
                     }
-
                 }
-                                   
-            }
-            Console.WriteLine("Hay " + contador + " numeros primos");
 
+                // Si al salir del ciclo sigue siendo true, es primo
+                if (esPrimo)
+                {
+                    Console.WriteLine(numero + " es primo");
+                    contadorPrimos++;
+                }
+            }
+
+            Console.WriteLine("Hay " + contadorPrimos + " numeros primos");
         }
+
         static void Main(string[] args)
         {
             Console.WriteLine("Ingrese dos valores para analizar los numeros primos entre ellos");
             NumeradorPrimo();
-            
+           
         }
-        //
     }
 }
