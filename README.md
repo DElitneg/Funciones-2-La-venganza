@@ -316,3 +316,57 @@ namespace ConsoleApplication1
         //
     }
 }
+
+// 8) falta
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication1
+{
+    class Program
+    {
+
+        static void NumeradorPrimo()
+        {
+            //la descomposicion de factores primos es como la potencia pero divisoria
+
+            Double contador = 0;
+            Double inicio = Convert.ToDouble(Console.ReadLine());
+            Double final = Convert.ToDouble(Console.ReadLine());
+
+            for (Double numero = (inicio+1); numero < final; numero++)
+            {
+                //Console.WriteLine(numero + " numero");
+
+                for (Double i = 2; i < numero; i++)
+                {
+                    //Console.WriteLine(i + " divisor");
+
+                    if (numero % i < i)
+                    {
+
+                        Console.WriteLine(numero / i);
+                        contador++;
+
+                    }
+
+                }
+                                   
+            }
+            Console.WriteLine("Hay " + contador + " numeros primos");
+
+        }
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Ingrese dos valores para analizar los numeros primos entre ellos");
+            NumeradorPrimo();
+            
+        }
+        //
+    }
+}
