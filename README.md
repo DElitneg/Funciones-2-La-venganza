@@ -317,58 +317,68 @@ namespace ConsoleApplication1
     }
 }
 
-// 8) falta
+// 8) TERMINADO AL FIN POR FAVOR
 
 
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace ConsoleApplication1
 {
     class Program
     {
+
         static void NumeradorPrimo()
         {
-            int contadorPrimos = 0;
-            
-            // Usamos int en lugar de Double
-            int inicio = Convert.ToInt32(Console.ReadLine());
-            int final = Convert.ToInt32(Console.ReadLine());
+            int NumeroInicial = int.Parse(Console.ReadLine());
+            Console.WriteLine("Ingrese el numero que represente el extremo final");
+            int NumeroFinal = int.Parse(Console.ReadLine());
 
-            // Recorremos los números en el rango (excluyendo inicio y final)
-            for (int numero = (inicio + 1); numero < final; numero++)
+            int PrimosTotales = 0, faltas = 0;             
+
+            for(int i = (NumeroInicial + 1); i < NumeroFinal; i++)
             {
-                // El 1 y los números menores no son primos
-                if (numero <= 1) continue; 
+                Console.WriteLine(i+" Numero actual ");
 
-                bool esPrimo = true;
+                for(int z = 2; z < i; z++)
+                {                   
+                    Console.WriteLine(z + " Divisor ");
 
-                // Buscamos si tiene algún divisor exacto
-                // Optimizamos: solo evaluamos hasta la raíz cuadrada del número
-                for (int i = 2; i * i <= numero; i++)
-                {
-                    if (numero % i == 0)
+                    if (i % z == 0)
                     {
-                        esPrimo = false; 
-                        break;       
-                    }
+                        Console.WriteLine("Resultado: " + i % z);
+                        faltas += 1;
+                        Console.WriteLine(faltas + " falta ");
+                    }                
                 }
-
-                // Si al salir del ciclo sigue siendo true, es primo
-                if (esPrimo)
+                if(faltas==0)
                 {
-                    Console.WriteLine(numero + " es primo");
-                    contadorPrimos++;
+                    PrimosTotales += 1;
+                    Console.WriteLine(" Primos Totales encontrados: " + PrimosTotales);
+                    Console.WriteLine("Primo encontrado: " + i);                   
                 }
+                else
+                {
+                    faltas = 0;
+                }
+
             }
+            Console.WriteLine("Primos Totales encontrados: "+ PrimosTotales);
+            ///
 
-            Console.WriteLine("Hay " + contadorPrimos + " numeros primos");
         }
-
         static void Main(string[] args)
         {
-            Console.WriteLine("Ingrese dos valores para analizar los numeros primos entre ellos");
+            Console.WriteLine("Ingrese un numero que represente el extremo inicio");
+
             NumeradorPrimo();
-           
+
         }
+        //
+
+
     }
 }
