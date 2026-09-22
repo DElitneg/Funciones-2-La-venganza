@@ -16,20 +16,25 @@ namespace ConsoleApplication1
         static void Numerador()
         {
             //mayor, menor, promedio de todos, cantidad impares y pares
-            int mayor, menor, promedio = 0, pares = 0, impares = 0;
+            Double mayor, menor, promedio = 0, pares = 0, impares = 0;
 
-            int numero = Convert.ToInt32(Console.ReadLine());
-            mayor = numero; menor = numero;
-            promedio += numero;
 
-            for (int i = 0; i < 4; i++)
+            Double maximo = Double.Parse(Console.ReadLine());
+
+
+            Console.WriteLine("Ingrese "+maximo+" numeros enteros para ser analizados");
+            //Double numero = Convert.ToDouble(Console.ReadLine());
+            mayor = maximo; menor = maximo;
+            
+
+            for (Double i = 0; i < maximo; i++)
             {
 
-                numero = int.Parse(Console.ReadLine());
+                Double numero = Convert.ToDouble(Console.ReadLine());
 
                 promedio = promedio + numero;
 
-                if (numero < menor) 
+                if (numero < menor)
                 {
                     menor = numero;
                 }
@@ -41,28 +46,27 @@ namespace ConsoleApplication1
                 {
                     pares += 1;
                 }
-                else if (numero % 2 != 0) 
+                else if (numero % 2 != 0)
                 {
                     impares += 1;
                 }
-                
+
             }
-            promedio = promedio / 5;
-            Console.WriteLine("El mayor numero ingresado fue "+mayor+". El menor fue "+menor);
-            Console.WriteLine("El promedio de todos los valores fue "+promedio);
-            Console.WriteLine("Hubo "+pares+" Numeros Pares, y "+impares+" Numeros Impares");
+            promedio = promedio / maximo;
+            Console.WriteLine("El mayor numero ingresado fue " + mayor + ". El menor fue " + menor);
+            Console.WriteLine("El promedio de todos los valores fue " + promedio);
+            Console.WriteLine("Hubo " + pares + " Numeros Pares, y " + impares + " Numeros Impares");
         }
         static void Main(string[] args)
         {
 
-            Console.WriteLine("Ingrese 5 numeros enteros para ser analizados");
+            Console.WriteLine("Cuantos numeros desea ingresar?");
             Numerador();
 
         }
         //
     }
 }
-
 //2)
 
 using System;
